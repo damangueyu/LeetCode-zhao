@@ -1,5 +1,7 @@
 package 数组.删除排序数组中的重复项;
 
+import java.util.Arrays;
+
 /**
  * @desc:
  * @author: 21927
@@ -18,13 +20,14 @@ public class Solution {
             return 0;
         }
         int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
+        for (int j = 1; j < nums.length-1; j++) {
+            if (nums[i] != nums[j]) {
+                nums[i+1] = nums[j];
                 i++;
-                nums[i] = nums[j];
             }
         }
-        System.out.println("执行后:"+nums);
+
+        System.out.println(Arrays.toString(nums));
         return i + 1;
     }
 
